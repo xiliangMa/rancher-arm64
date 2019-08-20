@@ -69,10 +69,10 @@ build-hyperkube() {
 build-flannel-cni() {
     if check-skip flannel-cni ; then return 0; fi
 
-    # git_ensure https://github.com/coreos/flannel-cni
-    # reset flannel-cni "${FLANNEL_CNI_VERSION}"
-    # log_info patching
-    # git_apply flannel-cni "${FLANNEL_CNI_VERSION}" "${FLANNEL_CNI_VERSION}${RR_SUFFIX}"
+    git_ensure https://github.com/coreos/flannel-cni
+    reset flannel-cni "${FLANNEL_CNI_VERSION}"
+    log_info patching
+    git_apply flannel-cni "${FLANNEL_CNI_VERSION}" "${FLANNEL_CNI_VERSION}${RR_SUFFIX}"
 
     log_info build
     (
@@ -192,10 +192,10 @@ build-helm() {
 build-ingress-nginx() {
     if check-skip ingress-nginx ; then return 0; fi
 
-    # git_ensure https://github.com/rancher/ingress-nginx.git
-    # reset ingress-nginx "${INGRESS_NGINX_VERSION}"
-    # log_info patching
-    # git_apply ingress-nginx "${INGRESS_NGINX_VERSION}" "${INGRESS_NGINX_VERSION}${RR_SUFFIX}"
+    git_ensure https://github.com/rancher/ingress-nginx.git
+    reset ingress-nginx "${INGRESS_NGINX_VERSION}"
+    log_info patching
+    git_apply ingress-nginx "${INGRESS_NGINX_VERSION}" "${INGRESS_NGINX_VERSION}${RR_SUFFIX}"
 
     log_info build
     (
